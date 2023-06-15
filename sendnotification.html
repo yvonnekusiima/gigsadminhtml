@@ -10,7 +10,9 @@
 	<link rel="icon" href="assets/dist/img/favicon.png">
     <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
-	<link rel="manifest" href="gigsadminmanifest.json">
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="manifest" href="gigsadminmanifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/dist/img/apple-touch-icon.png">
     <link href="assets/dist/img/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
     <link href="assets/dist/img/splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
@@ -123,7 +125,7 @@
                             <a href="errorreports.html" class="nav-link"><i class="nav-icon fa fa-bug"></i><p>Error Reports</p></a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.1/" class="nav-link"><i class="nav-icon fas fa-file"></i><p>Documentation</p></a>
+                            <a href="#" class="nav-link"><i class="nav-icon fas fa-file"></i><p>Documentation</p></a>
                         </li>
                     </ul>
                 </nav>
@@ -157,14 +159,14 @@
                                             <img src="assets/dist/img/logo-icon.png" width="30">
                                         </span>
                                     </a>
-                                    <b class="mb-2 float-right">ADD USER</b>
+                                    <b class="mb-2 float-right">SEND NOTIFICATION</b>
                                 </div>
                                 <!-- /.card-header -->
                                 <form method="post">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Notification To *</label>
-                                            <select class="form-control selectric" name="notificationto">
+                                            <select class="form-control select2bs4" name="notificationto" style="width:100%">
 											    <option>Select</option>
 											    <option value="All">All</option>
 											    <option value="Users">Users</option>
@@ -212,9 +214,19 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <script src="assets/dist/js/adminlte.min.js"></script>
+	<script src="assets/plugins/select2/js/select2.full.min.js"></script>
     <script>
         $(function () {
             bsCustomFileInput.init();
+        });
+    </script>
+	<script>
+        $(function () {
+		    $('.select2').select2()
+			
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
         });
     </script>
 </body>
